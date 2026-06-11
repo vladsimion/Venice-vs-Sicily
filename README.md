@@ -1,4 +1,4 @@
-# La Rotta e il Catasto — Venice, Sicily, and Two Ways of Drawing the Same Sea
+# La Rotta e il Catasto - Venice, Sicily, and Two Ways of Drawing the Same Sea
 
 An interactive, comparative web essay exploring the ideological, political, and cartographic divergence between Venetian and Sicilian historical map-making techniques from 1150 to 1750.
 
@@ -10,8 +10,8 @@ An interactive, comparative web essay exploring the ideological, political, and 
 
 Based on the cartographic theories of **J.B. Harley** (*Maps, Knowledge, and Power*), this project stands as a visual and systemic cross-examination of historical archives. It showcases how maps are not objective reflections of geography, but rather ideological instruments of power, mentality, and governance.
 
-* **La Rotta (The Route — Venice):** Represents a network-oriented, maritime worldview where space is a web of connections, harbor anchorages, and winds to be navigated. 
-* **Il Catasto (The Cadastre — Sicily):** Represents a territorial, defensive, and administrative segmentation where space is property to be measured, taxed, managed by foreign rulers, and defended from external threats.
+* **La Rotta (The Route - Venice):** Represents a network-oriented, maritime worldview where space is a web of connections, harbor anchorages, and winds to be navigated. 
+* **Il Catasto (The Cadastre - Sicily):** Represents a territorial, defensive, and administrative segmentation where space is property to be measured, taxed, managed by foreign rulers, and defended from external threats.
 
 ---
 
