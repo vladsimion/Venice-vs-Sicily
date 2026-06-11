@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Rotta e il Catasto - Venice, Sicily, and Two Ways of Drawing the Same Sea</title>
+<title>La Rotta e il Catasto — Venice, Sicily, and Two Ways of Drawing the Same Sea</title>
 <meta name="description" content="Venetian cartography drew the sea and left the land blank; Sicily's rulers drew the land and left the sea blank. A comparative essay in maps, 1150–1750.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
   --body:'Spectral',Georgia,serif;
   --mono:'Spline Sans Mono',monospace;
 
-  /* THE SEA AT NIGHT - Venice */
+  /* THE SEA AT NIGHT — Venice */
   --lagoon:#0B1D24;
   --lagoon-2:#0F2630;
   --lagoon-3:#143039;
@@ -32,13 +32,13 @@
   --oro-dim:rgba(210,168,75,.45);
   --corallo:#C96A4A;        /* the red of portolan toponyms */
 
-  /* THE LAND AT NOON - Sicily */
+  /* THE LAND AT NOON — Sicily */
   --calcare:#EDE3CC;        /* sun-bleached limestone */
   --calcare-2:#E4D8BC;
   --calcare-3:#DACBA8;
   --inchiostro:#2A2012;
   --inchiostro-soft:#54462E;
-  --carruba:#7C2D1C;        /* carob / oxblood - the surveyor's boundary ink */
+  --carruba:#7C2D1C;        /* carob / oxblood — the surveyor's boundary ink */
   --zolfo:#B8931F;          /* Sicilian sulfur */
   --oliva:#6C7048;
 
@@ -217,6 +217,21 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
 .lr-s p{color:var(--inchiostro-soft)}
 @media (max-width:760px){.lens-readings{grid-template-columns:1fr}}
 
+/* lens mode toggle + real-map layers */
+.lens-toggle{display:flex;gap:0;margin:0 0 14px;border:1px solid rgba(210,168,75,.45);width:max-content}
+.lens-toggle button{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:10px 18px;background:transparent;color:var(--foam-dim);border:none;cursor:pointer;
+}
+.lens-toggle button.on{background:var(--oro);color:var(--lagoon);font-weight:500}
+.lens-toggle button:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+.lens .lens-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;background:#0F2630}
+.lens.real svg{display:none}
+.lens.real .lens-img{display:block}
+.cap-real{display:none}
+.lens-wrap.real-mode .cap-schema{display:none}
+.lens-wrap.real-mode .cap-real{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;width:100%}
+
 /* ---------- FOUR QUESTIONS ---------- */
 .quattro{background:var(--calcare)}
 .q-grid{display:flex;flex-direction:column;gap:0;border:1px solid rgba(42,32,18,.3);margin-bottom:110px}
@@ -249,9 +264,19 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
 .dossier .who{font-size:.84rem;font-style:italic;margin-bottom:16px}
 .wing-v .dossier .who{color:var(--foam-dim)}
 .wing-s .dossier .who{color:var(--inchiostro-soft)}
-.dossier p{font-size:.92rem;font-weight:300;line-height:1.68;flex:1}
+.dossier p{font-size:.92rem;font-weight:300;line-height:1.68;margin:0 0 22px}
 .wing-v .dossier p{color:var(--foam-dim)}
 .wing-s .dossier p{color:var(--inchiostro-soft)}
+.ledger-list{list-style:none;margin-top:auto;padding-top:14px;border-top:1px dashed;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;line-height:1.65}
+.ledger-list li{padding:5px 0 5px 18px;position:relative}
+.ledger-list li::before{content:"\2013";position:absolute;left:0;top:5px}
+.wing-v .ledger-list{border-color:rgba(210,168,75,.35);color:var(--foam-dim)}
+.wing-v .ledger-list b{color:var(--oro);font-weight:500}
+.wing-v .ledger-list li::before{color:var(--oro)}
+.wing-s .ledger-list{border-color:rgba(124,45,28,.4);color:var(--inchiostro-soft)}
+.wing-s .ledger-list b{color:var(--carruba);font-weight:500}
+.wing-s .ledger-list li::before{color:var(--carruba)}
 .dossier .ledger-line{margin-top:18px;padding-top:14px;border-top:1px dashed;
   font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;line-height:1.8}
 .wing-v .dossier .ledger-line{border-color:rgba(210,168,75,.35);color:var(--foam-dim)}
@@ -512,7 +537,7 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     </svg>
     <span class="tag">Venezia · una repubblica di armatori</span>
     <h1 class="hero-word">la rotta</h1>
-    <p class="hero-def">The route. Space as a network of harbors, winds and bearings - drawn by the people who sailed it, sold openly on the Riva, blank one league inland.</p>
+    <p class="hero-def">The route. Space as a network of harbors, winds and bearings — drawn by the people who sailed it, sold openly on the Riva, blank one league inland.</p>
   </div>
   <div class="hero-half hero-s">
     <svg class="hero-art" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -542,7 +567,7 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     </svg>
     <span class="tag">Sicilia · un regno posseduto</span>
     <h1 class="hero-word">il catasto</h1>
-    <p class="hero-def">The cadastre. Space as a register of fields, fiefs and boundaries - drawn by engineers sent from elsewhere, filed in a foreign capital, blank from the shoreline out.</p>
+    <p class="hero-def">The cadastre. Space as a register of fields, fiefs and boundaries — drawn by engineers sent from elsewhere, filed in a foreign capital, blank from the shoreline out.</p>
   </div>
   <div class="hero-seam" aria-hidden="true"></div>
   <div class="hero-foot"><span>One sea · two maps · 1150 – 1750</span></div>
@@ -554,11 +579,11 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <span class="tag">L'argomento · the argument</span>
     <h2>Venice drew the <b>sea</b> and left the land blank.<br>
     Sicily's rulers drew the <u>land</u> and left the sea blank.</h2>
-    <p>Between the twelfth and the eighteenth centuries, the two great islands of Italian power produced two incompatible pictures of the same Mediterranean. Neither picture is more accurate. Each is a complete theory of what space is <em>for</em> - and of who gets to say so. Maps here are not illustration. They are evidence of mentality and governance: material traces of how connectivity, social organization and political control were structured differently in a merchant republic and a possessed kingdom.</p>
+    <p>Between the twelfth and the eighteenth centuries, the two great islands of Italian power produced two incompatible pictures of the same Mediterranean. Neither picture is more accurate. Each is a complete theory of what space is <em>for</em> — and of who gets to say so. Maps here are not illustration. They are evidence of mentality and governance: material traces of how connectivity, social organization and political control were structured differently in a merchant republic and a possessed kingdom.</p>
     <div class="claim">
       Venetian cartography reflects a <em>network-oriented, maritime worldview</em>: space as connections to be sailed.
       Sicilian cartography reflects <em>territorial control and administrative segmentation</em>: space as ground to be held, taxed, and defended.
-      The pages below demonstrate it - first in a single image, then map by map, ruler by ruler.
+      The pages below demonstrate it — first in a single image, then map by map, ruler by ruler.
     </div>
   </div>
 </section>
@@ -569,7 +594,11 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Lo specchio · I.</span>
       <h2>One island, two maps</h2>
-      <p class="lede">The same Sicily, drawn twice. On the left, the island as a Venetian pilot kept it - a coastline of harbors hung on a web of bearings, the interior silent. On the right, the island as a viceroy's engineer filed it - three administrative <em>valli</em>, fiefs measured in <em>salme</em>, the coast a chain of watchtowers facing out. <b style="color:var(--oro);font-weight:500">Drag the seam.</b></p>
+      <p class="lede">The same Sicily, drawn twice. On the left, the island as a Venetian pilot kept it — a coastline of harbors hung on a web of bearings, the interior silent. On the right, the island as a viceroy's engineer filed it — three administrative <em>valli</em>, fiefs measured in <em>salme</em>, the coast a chain of watchtowers facing out. <b style="color:var(--oro);font-weight:500">Drag the seam</b> &#8212; and use the toggle to swap the schematic reconstruction for the original artifacts: a real fourteenth-century portolan against a real territorial sheet of Sicily.</p>
+    </div>
+    <div class="lens-toggle rv" role="group" aria-label="Choose between the schematic reconstruction and original map scans">
+      <button type="button" id="tgSchema" class="on" aria-pressed="true">Schema</button>
+      <button type="button" id="tgReal" aria-pressed="false">Carte originali</button>
     </div>
     <div class="lens-wrap rv">
       <div class="lens" id="lens">
@@ -677,6 +706,8 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
           </g>
           <text x="36" y="56" font-family="'Cormorant',serif" font-style="italic" font-size="17" fill="#D2A84B">carta da navigar · venetiis</text>
         </svg>
+        <img class="lens-img" id="realA" alt="Anonymous portolan chart of the Mediterranean and Black Sea, c. 1320-1350, vellum (Library of Congress)"
+             data-src="https://commons.wikimedia.org/wiki/Special:FilePath/Mediterranean%20chart%20fourteenth%20century2.jpg?width=1600">
 
         <!-- LAYER B · THE VICEROY'S SURVEY -->
         <div class="layer-top" id="lensTop">
@@ -800,6 +831,8 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
             <text x="414" y="606">confine di vallo</text>
           </g>
         </svg>
+        <img class="lens-img" id="realB" alt="Abraham Ortelius, map of Sicily with inset of the territory of Syracuse, from the Theatrum Orbis Terrarum (Folger copy)"
+             data-src="https://commons.wikimedia.org/wiki/Special:FilePath/Map%20of%20ancient%20Sicily%20and%20inset%20map%20of%20the%20territories%20of%20Syracuse%20by%20Abraham%20Ortelius.jpeg?width=1600">
         </div>
 
         <div class="lens-tags">
@@ -811,8 +844,14 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
                aria-label="Drag the seam to compare the pilot's chart with the viceroy's survey">
       </div>
       <div class="lens-caption">
-        <span>Schematic, after the style of the sources - a portolan of the Vesconte tradition and a coastal survey of the Spannocchi tradition.</span>
-        <span><b>N.B.</b> Etna appears on both: the pilot's landmark, the surveyor's hazard.</span>
+        <span class="cap-schema" style="display:contents">
+          <span>Schematic, after the style of the sources — a portolan of the Vesconte tradition and a coastal survey of the Spannocchi tradition.</span>
+          <span><b>N.B.</b> Etna appears on both: the pilot's landmark, the surveyor's hazard.</span>
+        </span>
+        <span class="cap-real">
+          <span>Left: anonymous portolan chart of the Mediterranean &amp; Black Sea, c. 1320&#8211;50, vellum &#8212; Library of Congress, via Wikimedia Commons.</span>
+          <span>Right: Ortelius, Sicily with the territory of Syracuse inset, Theatrum Orbis Terrarum &#8212; Folger copy, via Wikimedia Commons. The seam still drags.</span>
+        </span>
       </div>
     </div>
 
@@ -820,12 +859,12 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
       <div class="lens-read lr-v">
         <span class="tag">Lettura veneziana</span>
         <h3>The coast is the only line that matters</h3>
-        <p>On the pilot's chart, Sicily is a rim of fourteen harbor names written perpendicular to the shore, red for the great ports, hung on a lattice of compass bearings. Every route runs <em>off the map</em> - to Tunis, to Naples, to Candia - because for Venice the island is a waypoint in a network, not a destination. One league inland the parchment goes silent. The interior is not hidden; it is simply not asked about.</p>
+        <p>On the pilot's chart, Sicily is a rim of fourteen harbor names written perpendicular to the shore, red for the great ports, hung on a lattice of compass bearings. Every route runs <em>off the map</em> — to Tunis, to Naples, to Candia — because for Venice the island is a waypoint in a network, not a destination. One league inland the parchment goes silent. The interior is not hidden; it is simply not asked about.</p>
       </div>
       <div class="lens-read lr-s">
         <span class="tag">Lettura siciliana</span>
         <h3>The interior is the whole subject</h3>
-        <p>On the engineer's survey, the same island is partitioned into its three historic <em>valli</em>, sown with inland towns and fiefs measured in <em>salme</em> for the tax rolls, its coast reduced to a defensive perimeter of royal strongholds and watchtowers facing outward. The sea - the entire organizing fact of the Venetian sheet - is a pale margin labelled <em>mare</em>, the direction trouble comes from.</p>
+        <p>On the engineer's survey, the same island is partitioned into its three historic <em>valli</em>, sown with inland towns and fiefs measured in <em>salme</em> for the tax rolls, its coast reduced to a defensive perimeter of royal strongholds and watchtowers facing outward. The sea — the entire organizing fact of the Venetian sheet — is a pale margin labelled <em>mare</em>, the direction trouble comes from.</p>
       </div>
     </div>
   </div>
@@ -837,17 +876,17 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Le quattro domande · II.</span>
       <h2>Interrogating the map, not admiring it</h2>
-      <p class="lede">A map proves nothing by itself. It becomes evidence when you cross-examine it. Four questions - Harley's questions - asked of both archives, with four pairs of answers that do not match.</p>
+      <p class="lede">A map proves nothing by itself. It becomes evidence when you cross-examine it. Four questions — Harley's questions — asked of both archives, with four pairs of answers that do not match.</p>
     </div>
     <div class="q-grid rv">
       <div class="q-row">
         <div class="q-cell q-q"><span class="qn">D. 1</span><h3>Who made it?</h3></div>
         <div class="q-cell q-v"><b>Pilots and merchant houses</b>Charts grew out of the trade itself: compiled by navigators, corrected voyage by voyage, copied in commercial workshops, finally absorbed into the chancery of a republic of shipowners. The mapmaker and the map's subject were the same people.</div>
-        <div class="q-cell q-s"><b>Engineers sent from elsewhere</b>Surveys were commissioned by whoever owned the island that century - a Norman king, an Aragonese viceroy, the council of Madrid. Al-Idrisi worked for Roger II; Spannocchi for Philip II; Schmettau for Charles VI. The mapped rarely held the pen.</div>
+        <div class="q-cell q-s"><b>Engineers sent from elsewhere</b>Surveys were commissioned by whoever owned the island that century — a Norman king, an Aragonese viceroy, the council of Madrid. Al-Idrisi worked for Roger II; Spannocchi for Philip II; Schmettau for Charles VI. The mapped rarely held the pen.</div>
       </div>
       <div class="q-row">
         <div class="q-cell q-q"><span class="qn">D. 2</span><h3>For whom?</h3></div>
-        <div class="q-cell q-v"><b>Anyone who sails</b>Portolans circulated openly - bought, sold, copied, carried aboard. Cartographic knowledge in Venice was a shared commercial asset, which is precisely why dozens of near-identical charts survive in dozens of hands.</div>
+        <div class="q-cell q-v"><b>Anyone who sails</b>Portolans circulated openly — bought, sold, copied, carried aboard. Cartographic knowledge in Venice was a shared commercial asset, which is precisely why dozens of near-identical charts survive in dozens of hands.</div>
         <div class="q-cell q-s"><b>The ruler's archive</b>Surveys were filed, not published. Spannocchi's atlas of the Sicilian coast went to Madrid; Schmettau's topography went to Vienna. The island's most accurate self-portraits left the island with its rulers.</div>
       </div>
       <div class="q-row">
@@ -857,8 +896,8 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
       </div>
       <div class="q-row">
         <div class="q-cell q-q"><span class="qn">D. 4</span><h3>What is omitted?</h3></div>
-        <div class="q-cell q-v"><b>The land behind the harbor</b>Interiors are blank or vague even in Venice's own colonies - Crete and Cyprus appear as rims of anchorages. Omission here is not ignorance; it is a statement that the interior generates no questions a pilot needs answered.</div>
-        <div class="q-cell q-s"><b>The sea beyond the towers</b>On the surveys the sea carries no routes, no soundings, no winds: it is the axis along which corsairs and rival fleets arrive. The same omission in reverse - and an equally complete theory of space.</div>
+        <div class="q-cell q-v"><b>The land behind the harbor</b>Interiors are blank or vague even in Venice's own colonies — Crete and Cyprus appear as rims of anchorages. Omission here is not ignorance; it is a statement that the interior generates no questions a pilot needs answered.</div>
+        <div class="q-cell q-s"><b>The sea beyond the towers</b>On the surveys the sea carries no routes, no soundings, no winds: it is the axis along which corsairs and rival fleets arrive. The same omission in reverse — and an equally complete theory of space.</div>
       </div>
     </div>
   </div>
@@ -870,29 +909,29 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Tradizione veneziana · III.</span>
       <h2>Three charts of a republic that floated</h2>
-      <p class="lede">Pick any three landmarks of Venetian map-making across three centuries and the same grammar repeats: dense coasts, named harbors, functional sea - and an interior treated as somebody else's problem.</p>
+      <p class="lede">Pick any three landmarks of Venetian map-making across three centuries and the same grammar repeats: dense coasts, named harbors, functional sea — and an interior treated as somebody else's problem.</p>
     </div>
     <div class="dossiers rv">
       <article class="dossier">
         <span class="yr">1311 · FLORENCE &amp; VENICE</span>
         <h3>Pietro Vesconte, signed portolan charts</h3>
-        <p class="who">Genoese chartmaker working in Venice - the earliest signed, dated sea charts</p>
-        <p>Coastlines accurate to within a few miles, harbor names written perpendicular to the shore in red and black, a web of compass bearings instead of a graticule - and, one league inland, nothing. Each crossing of the sea corrected the chart: iterative proofreading by keel, with no crown behind it.</p>
-        <div class="ledger-line"><b>EMPHASIZES</b> ports, bearings, distance run · <b>OMITS</b> the entire interior<br><b>ARGUMENT</b> space conceived as connections, refined by the people who used them</div>
+        <p class="who">Genoese chartmaker working in Venice — the earliest signed, dated sea charts</p>
+        <p>Coastlines accurate to within a few miles, harbor names written perpendicular to the shore in red and black, a web of compass bearings instead of a graticule — and, one league inland, nothing. Each crossing of the sea corrected the chart: iterative proofreading by keel, with no crown behind it.</p>
+        <ul class="ledger-list"><li><b>EMPHASIZES</b> ports, bearings, distance run</li><li><b>OMITS</b> the entire interior</li><li><b>ARGUMENT</b> space conceived as connections, refined by the people who used them</li></ul>
       </article>
       <article class="dossier">
         <span class="yr">c. 1450 · MURANO</span>
         <h3>Fra Mauro, mappamondo</h3>
         <p class="who">Camaldolese monk in the lagoon, drawing on merchant intelligence</p>
         <p>Two metres of vellum, three thousand inscriptions, Ptolemy examined and set aside, Africa shown circumnavigable forty years before Dias. Even Venice's world map is built the Venetian way: from the reports of traders and pilots, the world as accumulated commercial intelligence rather than inherited authority.</p>
-        <div class="ledger-line"><b>EMPHASIZES</b> reachable seas, traffic, testimony · <b>OMITS</b> the closed Ptolemaic frame<br><b>ARGUMENT</b> knowledge flows along the same routes as cargo</div>
+        <ul class="ledger-list"><li><b>EMPHASIZES</b> reachable seas, traffic, testimony</li><li><b>OMITS</b> the closed Ptolemaic frame</li><li><b>ARGUMENT</b> knowledge flows along the same routes as cargo</li></ul>
       </article>
       <article class="dossier">
         <span class="yr">1528 · VENICE</span>
         <h3>Benedetto Bordone, Isolario</h3>
-        <p class="who">Printed in Venice - a book whose chapters are islands</p>
-        <p>The <em>isolario</em> is a genre Venice practically owned: the world published as a sequence of islands and harbors, each a node with its anchorages and approaches. It is the Stato da Màr's self-image as literature - an empire that understood itself not as a territory but as an archipelago of connections.</p>
-        <div class="ledger-line"><b>EMPHASIZES</b> nodes, approaches, sequence · <b>OMITS</b> hinterlands, contiguity<br><b>ARGUMENT</b> even the book-form of Venetian geography is a network</div>
+        <p class="who">Printed in Venice — a book whose chapters are islands</p>
+        <p>The <em>isolario</em> is a genre Venice practically owned: the world published as a sequence of islands and harbors, each a node with its anchorages and approaches. It is the Stato da Màr's self-image as literature — an empire that understood itself not as a territory but as an archipelago of connections.</p>
+        <ul class="ledger-list"><li><b>EMPHASIZES</b> nodes, approaches, sequence</li><li><b>OMITS</b> hinterlands, contiguity</li><li><b>ARGUMENT</b> even the book-form of Venetian geography is a network</li></ul>
       </article>
     </div>
   </div>
@@ -904,29 +943,29 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Tradizione siciliana · IV.</span>
       <h2>Three surveys of an island that was owned</h2>
-      <p class="lede">Sicily's cartographic landmarks share a different grammar - and one biographical fact: each was commissioned by a foreign crown, and each finished its life in that crown's archive.</p>
+      <p class="lede">Sicily's cartographic landmarks share a different grammar — and one biographical fact: each was commissioned by a foreign crown, and each finished its life in that crown's archive.</p>
     </div>
     <div class="dossiers rv">
       <article class="dossier">
         <span class="yr">1154 · PALERMO, FOR THE NORMAN CROWN</span>
         <h3>Al-Idrisi, Tabula Rogeriana</h3>
         <p class="who">Arab geographer at the court of Roger II</p>
-        <p>The finest world map of its century was made <em>in</em> Sicily - but not <em>by</em> Sicily. It was a royal commission, knowledge gathered to the crown, its seventy regional sheets an inventory of the world as seen from a conqueror's court in Palermo. The island could see far, when its ruler chose to look.</p>
-        <div class="ledger-line"><b>EMPHASIZES</b> regions, itineraries, the king's reach · <b>OMITS</b> local authorship<br><b>ARGUMENT</b> Sicilian cartography begins as a possession of power, not a practice of the possessed</div>
+        <p>The finest world map of its century was made <em>in</em> Sicily — but not <em>by</em> Sicily. It was a royal commission, knowledge gathered to the crown, its seventy regional sheets an inventory of the world as seen from a conqueror's court in Palermo. The island could see far, when its ruler chose to look.</p>
+        <ul class="ledger-list"><li><b>EMPHASIZES</b> regions, itineraries, the king's reach</li><li><b>OMITS</b> local authorship</li><li><b>ARGUMENT</b> Sicilian cartography begins as a possession of power, not a practice of the possessed</li></ul>
       </article>
       <article class="dossier">
         <span class="yr">1578 · FOR PHILIP II, FILED IN MADRID</span>
         <h3>Tiburzio Spannocchi, Marine del Regno di Sicilia</h3>
         <p class="who">Sienese military engineer in Spanish service</p>
-        <p>An atlas of the entire Sicilian coast, beach by beach, tower by tower - drawn from the land looking <em>out</em>. Where a portolan asks "where can I land?", Spannocchi asks "where can <em>they</em> land?". The coast is rendered as a perimeter under surveillance; the project fed a building program of hundreds of watchtowers.</p>
-        <div class="ledger-line"><b>EMPHASIZES</b> landing beaches, fortification, sight-lines · <b>OMITS</b> trade, routes, the sea as opportunity<br><b>ARGUMENT</b> the same coastline, inverted: threat perception instead of connection</div>
+        <p>An atlas of the entire Sicilian coast, beach by beach, tower by tower — drawn from the land looking <em>out</em>. Where a portolan asks "where can I land?", Spannocchi asks "where can <em>they</em> land?". The coast is rendered as a perimeter under surveillance; the project fed a building program of hundreds of watchtowers.</p>
+        <ul class="ledger-list"><li><b>EMPHASIZES</b> landing beaches, fortification, sight-lines</li><li><b>OMITS</b> trade, routes, the sea as opportunity</li><li><b>ARGUMENT</b> the same coastline, inverted: threat perception instead of connection</li></ul>
       </article>
       <article class="dossier">
         <span class="yr">1719–21 · FOR CHARLES VI, FILED IN VIENNA</span>
         <h3>Samuel von Schmettau, topographic map of Sicily</h3>
         <p class="who">Prussian-born officer during the brief Austrian possession</p>
-        <p>The first systematic topographic survey of the whole island - roads, relief, settlements, the interior finally measured - produced in two years of military reconnaissance and promptly carried off to the Habsburg war archive. Sicily's most accurate map to date was, for Sicilians, effectively invisible.</p>
-        <div class="ledger-line"><b>EMPHASIZES</b> interior, relief, garrisons, roads · <b>OMITS</b> publication - it stayed secret<br><b>ARGUMENT</b> who controls the mapping controls what the territory is allowed to know about itself</div>
+        <p>The first systematic topographic survey of the whole island — roads, relief, settlements, the interior finally measured — produced in two years of military reconnaissance and promptly carried off to the Habsburg war archive. Sicily's most accurate map to date was, for Sicilians, effectively invisible.</p>
+        <ul class="ledger-list"><li><b>EMPHASIZES</b> interior, relief, garrisons, roads</li><li><b>OMITS</b> publication — it stayed secret</li><li><b>ARGUMENT</b> who controls the mapping controls what the territory is allowed to know about itself</li></ul>
       </article>
     </div>
   </div>
@@ -938,7 +977,7 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Il registro · V.</span>
       <h2>The double-entry of two worldviews</h2>
-      <p class="lede">Set the two archives side by side and the differences stop looking like style and start looking like structure - a ledger of routes against a register of fields.</p>
+      <p class="lede">Set the two archives side by side and the differences stop looking like style and start looking like structure — a ledger of routes against a register of fields.</p>
     </div>
     <div class="reg-table rv">
       <div class="reg-row head">
@@ -946,13 +985,13 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
         <div class="reg-cell reg-vv">Venezia</div>
         <div class="reg-cell reg-ss">SICILIA</div>
       </div>
-      <div class="reg-row"><div class="reg-cell reg-label">Focus</div><div class="reg-cell reg-vv">The sea and its routes - <i>movement</i></div><div class="reg-cell reg-ss">The land and its divisions - <i>possession</i></div></div>
+      <div class="reg-row"><div class="reg-cell reg-label">Focus</div><div class="reg-cell reg-vv">The sea and its routes — <i>movement</i></div><div class="reg-cell reg-ss">The land and its divisions — <i>possession</i></div></div>
       <div class="reg-row"><div class="reg-cell reg-label">Where the detail is</div><div class="reg-cell reg-vv">Coastlines, harbors, anchorages; interiors blank even in Venice's own colonies</div><div class="reg-cell reg-ss">Interiors, boundaries, fiefs, towers; the sea a pale margin</div></div>
-      <div class="reg-row"><div class="reg-cell reg-label">Unit of space</div><div class="reg-cell reg-vv">The league and the rhumb - distance <i>run</i></div><div class="reg-cell reg-ss">The <i>salma</i> and the <i>feudo</i> - surface <i>owned</i></div></div>
+      <div class="reg-row"><div class="reg-cell reg-label">Unit of space</div><div class="reg-cell reg-vv">The league and the rhumb — distance <i>run</i></div><div class="reg-cell reg-ss">The <i>salma</i> and the <i>feudo</i> — surface <i>owned</i></div></div>
       <div class="reg-row"><div class="reg-cell reg-label">Author</div><div class="reg-cell reg-vv">Pilots, merchants, the Republic's own chancery</div><div class="reg-cell reg-ss">Royal engineers and surveyors in foreign service</div></div>
-      <div class="reg-row"><div class="reg-cell reg-label">Reader</div><div class="reg-cell reg-vv">Anyone who sails - charts sold and copied openly</div><div class="reg-cell reg-ss">The crown - surveys filed in Madrid, Vienna, Turin</div></div>
+      <div class="reg-row"><div class="reg-cell reg-label">Reader</div><div class="reg-cell reg-vv">Anyone who sails — charts sold and copied openly</div><div class="reg-cell reg-ss">The crown — surveys filed in Madrid, Vienna, Turin</div></div>
       <div class="reg-row"><div class="reg-cell reg-label">Social shadow</div><div class="reg-cell reg-vv">Mobility, outward orientation, shared commercial knowledge</div><div class="reg-cell reg-ss">Stratification, localized identities, administrative fragmentation</div></div>
-      <div class="reg-row"><div class="reg-cell reg-label">Failure it fears</div><div class="reg-cell reg-vv">Shipwreck - the route mis-drawn</div><div class="reg-cell reg-ss">Revolt or invasion - the ground mis-held</div></div>
+      <div class="reg-row"><div class="reg-cell reg-label">Failure it fears</div><div class="reg-cell reg-vv">Shipwreck — the route mis-drawn</div><div class="reg-cell reg-ss">Revolt or invasion — the ground mis-held</div></div>
     </div>
   </div>
 </section>
@@ -963,11 +1002,11 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Il potere · VI.</span>
       <h2>Why the maps could not match</h2>
-      <p class="lede">Behind the two grammars stand two political histories. One government kept correcting its charts for eleven hundred years. The other island was re-surveyed by each new owner - and the surveys left with them.</p>
+      <p class="lede">Behind the two grammars stand two political histories. One government kept correcting its charts for eleven hundred years. The other island was re-surveyed by each new owner — and the surveys left with them.</p>
     </div>
 
     <div class="tl-block rv">
-      <h3 class="h-v">Venezia - one chancery, continuous correction</h3>
+      <h3 class="h-v">Venezia — one chancery, continuous correction</h3>
       <div class="tl-svg-wrap">
         <svg viewBox="0 0 1100 200" role="img" aria-label="Timeline: the Venetian Republic, 697 to 1797, a single unbroken line spanning the full width, with five charts and five prints marked">
           <!-- print rail -->
@@ -1042,7 +1081,7 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     </div>
 
     <div class="tl-block rv">
-      <h3 class="h-s">Sicilia - ten regimes, ten surveys, ten departures</h3>
+      <h3 class="h-s">Sicilia — ten regimes, ten surveys, ten departures</h3>
       <div class="tl-svg-wrap">
         <svg viewBox="0 0 1100 430" role="img" aria-label="Timeline: Sicily's ten successive regimes drawn as descending strata spanning 535 to 1860, with five commissioned surveys and six printed maps marked">
           <!-- print rail, edge to edge -->
@@ -1395,23 +1434,23 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
     <div class="sec-head rv">
       <span class="tag">Avvertenze · IX.</span>
       <h2>Where the neat binary bends</h2>
-      <p class="lede">A thesis that ignores its own counter-evidence is decoration. Three honest complications - each of which, examined closely, ends up sharpening the argument rather than breaking it.</p>
+      <p class="lede">A thesis that ignores its own counter-evidence is decoration. Three honest complications — each of which, examined closely, ends up sharpening the argument rather than breaking it.</p>
     </div>
     <div class="avv-grid rv">
       <article class="avv">
         <span class="num">AVV. I</span>
         <h3>Sicily could see the whole world</h3>
-        <p>Al-Idrisi's 1154 map, made in Palermo, outclassed anything in Europe for centuries. Sicilian pilots sailed; Messina was a great port. The island lacked neither skill nor sea. <em>What it lacked was a polity of its own to map for</em> - which is exactly the point: cartographic style follows political structure, not talent or geography.</p>
+        <p>Al-Idrisi's 1154 map, made in Palermo, outclassed anything in Europe for centuries. Sicilian pilots sailed; Messina was a great port. The island lacked neither skill nor sea. <em>What it lacked was a polity of its own to map for</em> — which is exactly the point: cartographic style follows political structure, not talent or geography.</p>
       </article>
       <article class="avv">
         <span class="num">AVV. II</span>
         <h3>Venice the landlord</h3>
-        <p>After taking the Terraferma in the fifteenth century, Venice surveyed fields, drainage and boundaries like any territorial state - Cristoforo Sorte's maps of the mainland are cadastral through and through. <em>Network logic was a circumstance, not an essence</em>: when Venice owned land, it drew like Sicily's rulers. The map follows the form of power.</p>
+        <p>After taking the Terraferma in the fifteenth century, Venice surveyed fields, drainage and boundaries like any territorial state — Cristoforo Sorte's maps of the mainland are cadastral through and through. <em>Network logic was a circumstance, not an essence</em>: when Venice owned land, it drew like Sicily's rulers. The map follows the form of power.</p>
       </article>
       <article class="avv">
         <span class="num">AVV. III</span>
         <h3>Mind the centuries, mind the survivors</h3>
-        <p>A 1311 chart and a 1721 survey are not simultaneous witnesses; commercial charts survive in dozens of copies, state surveys in single manuscripts. Compare like with like, always ask who commissioned the sheet, and never treat a map as an accurate reflection. <em>Maps are arguments, not photographs</em> - including the two on this page.</p>
+        <p>A 1311 chart and a 1721 survey are not simultaneous witnesses; commercial charts survive in dozens of copies, state surveys in single manuscripts. Compare like with like, always ask who commissioned the sheet, and never treat a map as an accurate reflection. <em>Maps are arguments, not photographs</em> — including the two on this page.</p>
       </article>
     </div>
   </div>
@@ -1429,23 +1468,23 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
       <div class="arc-col">
         <h3>Fonti · primary</h3>
         <ul>
-          <li><b>Biblioteca Nazionale Marciana, Venice</b> - Fra Mauro's mappamondo; Venetian charts and isolarii</li>
-          <li><b>Portolan corpus</b> - Vesconte (1311 onward), Dulcert, the Catalan Atlas; widely digitized, incl. <a href="https://gallica.bnf.fr" target="_blank" rel="noopener">gallica.bnf.fr</a></li>
-          <li><b>Biblioteca Nacional de España, Madrid</b> - Spannocchi, <i>Descripción de las marinas de todo el Reino de Sicilia</i> (1578)</li>
-          <li><b>Archivio di Stato di Palermo</b> - <i>riveli</i> (hearth censuses), feudal and administrative records</li>
-          <li><b>Austrian war archives, Vienna</b> - Schmettau's topographic survey of Sicily (1719–21)</li>
-          <li><b>Bodleian Library, Oxford</b> - the principal surviving copy of al-Idrisi's geography</li>
+          <li><b>Biblioteca Nazionale Marciana, Venice</b> — Fra Mauro's mappamondo; Venetian charts and isolarii</li>
+          <li><b>Portolan corpus</b> — Vesconte (1311 onward), Dulcert, the Catalan Atlas; widely digitized, incl. <a href="https://gallica.bnf.fr" target="_blank" rel="noopener">gallica.bnf.fr</a></li>
+          <li><b>Biblioteca Nacional de España, Madrid</b> — Spannocchi, <i>Descripción de las marinas de todo el Reino de Sicilia</i> (1578)</li>
+          <li><b>Archivio di Stato di Palermo</b> — <i>riveli</i> (hearth censuses), feudal and administrative records</li>
+          <li><b>Austrian war archives, Vienna</b> — Schmettau's topographic survey of Sicily (1719–21)</li>
+          <li><b>Bodleian Library, Oxford</b> — the principal surviving copy of al-Idrisi's geography</li>
         </ul>
       </div>
       <div class="arc-col">
         <h3>Studi · secondary</h3>
         <ul>
-          <li><b>Harley &amp; Woodward (eds.)</b>, <i>The History of Cartography</i>, vols. 1–3 - the foundation</li>
-          <li><b>J. B. Harley</b>, "Maps, Knowledge, and Power" and "Deconstructing the Map" - maps as ideological instruments</li>
+          <li><b>Harley &amp; Woodward (eds.)</b>, <i>The History of Cartography</i>, vols. 1–3 — the foundation</li>
+          <li><b>J. B. Harley</b>, "Maps, Knowledge, and Power" and "Deconstructing the Map" — maps as ideological instruments</li>
           <li><b>Tony Campbell</b>, "Portolan Charts from the Late Thirteenth Century to 1500," in HoC vol. 1</li>
-          <li><b>Piero Falchetta</b>, <i>Fra Mauro's World Map</i> - the lagoon's worldview in one object</li>
+          <li><b>Piero Falchetta</b>, <i>Fra Mauro's World Map</i> — the lagoon's worldview in one object</li>
           <li><b>Liliane Dufour</b>, studies of Spannocchi and the fortified Sicilian coast</li>
-          <li><b>Jerry Brotton</b>, <i>Trading Territories</i> - mapping and early-modern power, Mediterranean-wide</li>
+          <li><b>Jerry Brotton</b>, <i>Trading Territories</i> — mapping and early-modern power, Mediterranean-wide</li>
         </ul>
       </div>
     </div>
@@ -1747,6 +1786,36 @@ nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14p
       });
     }
   });
+
+  /* schema <-> original-maps toggle on the lens */
+  var lensEl = document.getElementById('lens');
+  var wrapEl = lensEl ? lensEl.closest('.lens-wrap') : null;
+  var tgS = document.getElementById('tgSchema'), tgR = document.getElementById('tgReal');
+  if (lensEl && tgS && tgR){
+    var realImgs = [document.getElementById('realA'), document.getElementById('realB')];
+    var loaded = false, failed = false;
+    function setMode(real){
+      if (real && failed) return;
+      if (real && !loaded){
+        loaded = true;
+        realImgs.forEach(function(img){
+          img.addEventListener('error', function(){
+            failed = true; setMode(false);
+            tgR.disabled = true;
+            tgR.textContent = 'Carte originali (offline)';
+          });
+          img.src = img.getAttribute('data-src');
+        });
+      }
+      lensEl.classList.toggle('real', real);
+      if (wrapEl) wrapEl.classList.toggle('real-mode', real);
+      tgS.classList.toggle('on', !real); tgR.classList.toggle('on', real);
+      tgS.setAttribute('aria-pressed', String(!real));
+      tgR.setAttribute('aria-pressed', String(real));
+    }
+    tgS.addEventListener('click', function(){ setMode(false); });
+    tgR.addEventListener('click', function(){ setMode(true); });
+  }
 
   /* print markers & keys jump to their gallery card */
   document.querySelectorAll('[data-print]').forEach(function(el){
